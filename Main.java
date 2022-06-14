@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 class Main {
   public static void main(String[] args) {
-    HashMap<String, String> facts = new HashMap<String, String>();
+    HashMap<String, Integer> facts = new HashMap<String, Integer>();
     
     char[][] board = new char[3][3];
     for (int i = 0;i<3;i++)
@@ -31,23 +31,32 @@ while(true){
             System.out.println("Player 2 score: " + p2score);
               }
     for (String thing : facts.keySet()){
-      String value = facts.get(thing);
+      int value = facts.get(thing);
 
       System.out.println(thing + ": " + value);
       }
          break;   
-    
+    case "q":
+            System.out.println("Thanks for playing ");
+            LeaderboardState state = new LeaderboardState();
+            state.leaderboard = facts;
+            state.save();
+            return;
+            
   case "p":
   System.out.println("\tTIC TAC TOE GAME!!");
   System.out.println("Player 1 name:");
   String player1 = scan.nextLine();
   System.out.println("Player 2 name:");
   String player2 = scan.nextLine();
+  break;
+        }    
+  
 
-    
+        
     
   drawBoard(board);
-
+        
 
       while (!Full(board)){
       // while (row>=0 || row <3){
@@ -96,7 +105,7 @@ while(true){
     }
     }
   }
-    }
+    
     
     public static void resetBoard(char[][] board){
       for (int i = 0;i<3;i++)
@@ -149,49 +158,9 @@ while(true){
 		return true;
       }
     } 
-/*public static void main (String[] args) { 
-  for(int a = 0; a < 8; a++){
-string line = null; 
-switch(a)
-case 0: 
-    line = board[0] + board[1]+board[2];
-    break; 
-case 1:
-    line = board[3] + board[4] + board[5];
-    break; 
-case 2: 
-    line = board[6] + board[7] + board[8];
-    break;
-case 3: 
-    line = board[0] + board[3] + board[6];
-    break;
-case 4:
-    line = board[1] + board[4] + board[7];
-    break;
-case 5:
-    line = board[2] + board[5] + board[8];
-    break; 
-case 6: 
-    line = board[0] + board[4] + board[8];
-    break; 
-case 7: 
-    line = board[2] + board[4] + board[6];
-    break; 
-}
-if(line.equals("XXX")){
-  return "X";
-} else if (line.equals("OOO")){
-    return "O";
-      }
-        }
-  for (int a = 0; a<9; a++){
-    if (array.asList(board).contains(String.valuesOf(a+1))){
-break; 
-    }
-else if (a==8) return "draw";
-  }
-  */
-  
 
 
 
+
+
+ 

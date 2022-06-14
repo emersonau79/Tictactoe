@@ -1,0 +1,3 @@
+In this Game we made a 3x3 tictactoe board in which there are two players who and player 1 goes first and marks their spot with an "x" to indicate their spot and same thing with Player 2 but with "o"s. The first person with 3 in a row wins the game and a point is added to their score
+Serialization was implemented by adding a persistent leaderboard. The current state of the leaderboard is saved each time "quit" is entered by the user, and the state is restored each time the program is initialized.
+Emerson And Aaron 
